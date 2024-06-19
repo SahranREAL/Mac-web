@@ -1,0 +1,138 @@
+/* Style pour la fenêtre macOS */
+.window {
+    position: fixed;
+    top: 50%; /* Alignement vertical au milieu */
+    left: 50%; /* Alignement horizontal au milieu */
+    transform: translate(-50%, -50%); /* Déplacement pour centrer */
+    background-color: #f7f7f7; /* Couleur de fond de la fenêtre */
+    border: 1px solid #ccc; /* Bordure légère */
+    width: 500px; /* Largeur de la fenêtre */
+    max-width: 80%; /* Largeur maximale de la fenêtre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    z-index: 100; /* Pour s'assurer que la fenêtre est au-dessus des autres éléments */
+    display: none; /* Par défaut, la fenêtre est cachée */
+    user-select: none; /* Empêche la sélection du contenu */
+    -webkit-user-select: none; /* Pour les navigateurs basés sur WebKit (comme Safari) */
+}
+
+/* Style pour le titre de la fenêtre */
+.window-header {
+    background-color: #f0f0f0; /* Couleur de fond de l'en-tête */
+    padding: 10px; /* Espacement interne */
+    border-bottom: 1px solid #ccc; /* Bordure inférieure légère */
+    border-radius: 10px 10px 0 0; /* Coins arrondis uniquement en haut */
+}
+
+.window-title {
+    font-size: 18px; /* Taille du titre de la fenêtre */
+    margin: 0; /* Supprimer les marges par défaut */
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour le contenu de la fenêtre */
+.window-content {
+    padding: 20px; /* Espacement interne du contenu */
+}
+
+/* Style pour le bouton de fermeture de la fenêtre */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url('../img/close.png'); /* Icône de fermeture */
+    background-size: cover;
+}
+
+.close-button:hover {
+    opacity: 0.7;
+}
+
+/* Style pour mettre la fenêtre en plein écran */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+/* Styles pour la fenêtre, l'en-tête et le contenu */
+/* Ajoutez vos styles personnalisés ici */
+
+/* Style pour l'icône de basculement en mode plein écran */
+.fullscreen-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Style pour l'image de l'icône de basculement en mode plein écran */
+.fullscreen-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style pour rendre l'icône de basculement en mode plein écran légèrement transparente au survol */
+.fullscreen-button:hover {
+    opacity: 0.7;
+}
+
+/* Styles pour le bouton de fermeture de la fenêtre */
+.close-button {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url('../img/close.png');
+    background-size: cover;
+}
+
+/* Styles pour l'icône de basculement en mode plein écran */
+.fullscreen-button {
+    position: absolute;
+    top: 5px;
+    left: 35px; /* Ajustement de la position */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Style pour le titre de la fenêtre */
+.window-title {
+    position: absolute;
+    top: 5px;
+    left: 60px; /* Ajustement de la position */
+    right: 60px; /* Ajustement de la position */
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+    text-align: center;
+}
+
+
+/* Style pour mettre la fenêtre en plein écran */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Modifier la largeur pour qu'elle occupe toute la largeur de la fenêtre */
+    height: 100vh; /* Modifier la hauteur pour qu'elle occupe toute la hauteur de la fenêtre */
+    z-index: 9999;
+}
+
+/* Style pour l'iframe en mode plein écran */
+.window-content iframe.fullscreen {
+    width: 100%;
+    height: 100%;
+}

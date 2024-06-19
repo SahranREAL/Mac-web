@@ -1,0 +1,63 @@
+/* Styles pour la fenêtre des paramètres */
+#settings-window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 90%;
+    height: auto;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+#settings-window .window-header {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: move;
+}
+
+#settings-window .window-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#settings-window .window-content {
+    padding: 20px;
+}
+
+#settings-window label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#settings-window input[type="text"],
+#settings-window input[type="email"],
+#settings-window select {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#settings-window button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#settings-window button:hover {
+    background-color: #0056b3;
+}

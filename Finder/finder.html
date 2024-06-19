@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Desktop</title>
+    <link rel="stylesheet" href="finder.css">
+    <link rel="stylesheet" href="windwos.css">
+    <script src="settings.js"></script>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="gestion.css">
+
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="apple-menu">
+            <img src="../img/logoappel.png" alt="Apple Logo" class="logo">
+            <div class="apple-dropdown">
+                <a href="#">About This Mac</a>
+                <div class="divider"></div>
+                <a href="#">System Preferences</a>
+                <a href="#">App Store</a>
+                <div class="divider"></div>
+                <a href="#">Recent Items</a>
+                <div class="divider"></div>
+                <a href="#">Force Quit</a>
+                <div class="divider"></div>
+                <a href="#">Sleep</a>
+                <a href="#">Restart</a>
+                <a href="#">Shut Down</a>
+                <div class="divider"></div>
+                <a href="#">Lock Screen</a>
+                <a href="../index.html">Log Out User</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Finder</a>
+                    <div class="dropdown-content">
+                        <a href="#">À propos de ce Mac</a>
+                        <a href="#">Préférences Système...</a>
+                        <a href="#">App Store...</a>
+                        <div class="divider"></div>
+                        <a href="#">Récents</a>
+                        <a href="#" onclick="openFileManager()">Documents</a>
+                        <a href="#">Téléchargements</a>
+                        <a href="#">Applications</a>
+                        <a href="#">Bureau</a>
+                        <div class="divider"></div>
+                        <a href="#">Forcer à quitter...</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Fichier</a>
+                    <div class="dropdown-content">
+                        <a href="#">Nouvelle fenêtre Finder</a>
+                        <a href="#">Nouvel onglet Finder</a>
+                        <a href="#" onclick="openFileManager()">Ouvrir</a>
+                        <div class="divider"></div>
+                        <a href="#">Fermer la fenêtre</a>
+                    </div>
+                </li>
+                
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Édition</a>
+                    <div class="dropdown-content">
+                        <a href="#">Annuler</a>
+                        <a href="#">Rétablir</a>
+                        <div class="divider"></div>
+                        <a href="#">Couper</a>
+                        <a href="#">Copier</a>
+                        <a href="#">Coller</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Affichage</a>
+                    <div class="dropdown-content">
+                        <a href="#">Personnaliser la barre d’outils...</a>
+                        <a href="#">Afficher les options de présentation</a>
+                        <a href="#">Afficher la barre de chemin d’accès</a>
+                        <a href="#">Afficher la barre d’état</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Aller</a>
+                    <div class="dropdown-content">
+                        <a href="#">Page d'accueil</a>
+                        <a href="#">Documents</a>
+                        <a href="#">Téléchargements</a>
+                        <a href="#">Applications</a>
+                        <a href="#">Bureau</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Fenêtre</a>
+                    <div class="dropdown-content">
+                        <a href="#">Réduire</a>
+                        <a href="#">Zoom</a>
+                        <a href="#">Tout ramener au front</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Aide</a>
+                    <div class="dropdown-content">
+                        <a href="#">Aide Mac</a>
+                        <a href="#">Aide Finder</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="dock">
+        <div class="dock-icons">
+            <img src="../img/finder.png" alt="Finder">
+            <img src="../img/safarie.png" alt="Safari">
+            <img src="../img/mail.png" alt="Mail">
+            <img src="../img/calendier.png" alt="Calendar">
+            <img src="../img/settings.png" alt="Settings" onclick="openSettingsWindow()">
+            <img src="../img/mancraft.png" alt="Minecraft">
+            <img src="../img/github.png" alt="github" onclick="redirectToGitHub()">
+
+            <script>
+                function redirectToGitHub() {
+                    // Redirection vers la page GitHub
+                    window.location.href = "https://github.com/SahranREAL";
+                }
+            </script>
+            
+            <!-- Ajoutez d'autres icônes du dock ici -->
+        </div>
+    </div>
+
+
+
+
+
+<!-- Fenêtre simulant Safari sans connexion Internet -->
+<div class="window" id="safari-window">
+    <div class="window-header">
+        <span class="close-button" onclick="closeWindow('safari-window')"></span>
+        <span class="fullscreen-button" onclick="toggleFullscreen('safari-window')">
+            <img src="../img/full.png" alt="Fullscreen" class="fullscreen-icon">
+        </span>
+        <span class="window-title">Safari</span>
+    </div>
+    <div class="window-content">
+        <h1>Impossible d'établir une connexion Internet.</h1>
+        <p>Veuillez vérifier votre connexion et réessayer.</p>
+    </div>
+</div>
+
+
+<!-- Fenêtre Minecraft -->
+<div class="window" id="minecraft-window">
+    <div class="window-header">
+        <span class="close-button" onclick="closeWindow('minecraft-window')"></span>
+        <span class="fullscreen-button" onclick="toggleFullscreen('minecraft-window')">
+            <img src="../img/full.png" alt="Fullscreen">
+        </span>
+        <span class="window-title">Minecraft</span>
+    </div>
+    <div class="window-content">
+        <!-- Ajoutez une iframe pour charger le jeu Minecraft -->
+        <iframe src="https://eaglercraft.com/mc/1.8.8/" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Fenêtre des paramètres -->
+<div class="window" id="settings-window">
+    <div class="window-header">
+        <img src="../img/close.png" alt="Image de croix" class="cross-image" onclick="closeWindow('settings-window')">
+        <span class="window-title">Paramètres</span>
+    </div>
+    <div class="window-content">
+        <!-- Contenu des paramètres -->
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
+
+        <label for="email">Adresse e-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail">
+
+        <label for="notification">Notifications:</label>
+        <select id="notification" name="notification">
+            <option value="1">Activées</option>
+            <option value="0">Désactivées</option>
+        </select>
+
+        <label for="theme">Thème:</label>
+        <select id="theme" name="theme">
+            <option value="light">Clair</option>
+            <option value="dark">Sombre</option>
+        </select>
+
+        <button id="save-settings-btn">Enregistrer</button>
+        <button id="close-settings-btn">Fermer</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Sélectionnez toutes les icônes du dock
+    const dockIcons = document.querySelectorAll('.dock-icons img');
+
+// Parcourez chaque icône du dock
+dockIcons.forEach((icon, index) => {
+    // Ajoutez un écouteur d'événement de clic à chaque icône
+    icon.addEventListener('click', () => {
+        // Vérifiez si l'icône cliquée est Safari
+        if (dockIcons[index].alt.toLowerCase() === 'safari') {
+            // Affichez la fenêtre Safari (simulée)
+            const safariWindow = document.getElementById('safari-window');
+            safariWindow.style.display = 'block';
+        } else if (dockIcons[index].alt.toLowerCase() === 'minecraft') {
+            // Affichez la fenêtre Minecraft (simulée)
+            const minecraftWindow = document.getElementById('minecraft-window');
+            minecraftWindow.style.display = 'block';
+        } else if (dockIcons[index].alt.toLowerCase() === 'settings') {
+            // Affichez la fenêtre des paramètres
+            openSettingsWindow();
+            // Sélectionnez la fenêtre des paramètres et appliquez la fonction pour la rendre déplaçable
+const settingsWindow = document.getElementById('settings-window');
+makeWindowDraggable(settingsWindow);
+
+        }
+    });
+});
+
+// Définition de la fonction pour ouvrir la fenêtre des paramètres
+function openSettingsWindow() {
+    const settingsWindow = document.getElementById('settings-window');
+    settingsWindow.style.display = 'block';
+}
+
+    // Fonction pour fermer la fenêtre
+    function closeWindow(windowId) {
+        const windowElement = document.getElementById(windowId);
+        windowElement.style.display = 'none';
+    }
+
+    // Fonction pour rendre une fenêtre déplaçable
+    function makeWindowDraggable(windowElement) {
+        const header = windowElement.querySelector('.window-header');
+        let offsetX, offsetY;
+
+        // Fonction de gestionnaire d'événement pour le clic initial
+        function onMouseDown(event) {
+            offsetX = event.clientX - windowElement.getBoundingClientRect().left;
+            offsetY = event.clientY - windowElement.getBoundingClientRect().top;
+
+            // Ajouter des gestionnaires d'événements pour le déplacement de la souris et le relâchement de la souris
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        }
+
+        // Fonction de gestionnaire d'événement pour le déplacement de la souris
+        function onMouseMove(event) {
+            windowElement.style.left = event.clientX - offsetX + 'px';
+            windowElement.style.top = event.clientY - offsetY + 'px';
+        }
+
+        // Fonction de gestionnaire d'événement pour le relâchement de la souris
+        function onMouseUp() {
+            // Supprimer les gestionnaires d'événements de la souris
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+
+        // Ajouter un gestionnaire d'événements pour le clic initial sur l'en-tête de la fenêtre
+        header.addEventListener('mousedown', onMouseDown);
+    }
+
+    // Sélectionnez la fenêtre Safari et appliquez la fonction pour la rendre déplaçable
+    const safariWindow = document.getElementById('safari-window');
+    makeWindowDraggable(safariWindow);
+
+    // Sélectionnez la fenêtre de Minecraft et appliquez la fonction pour la rendre déplaçable
+    const minecraftWindow = document.getElementById('minecraft-window');
+    makeWindowDraggable(minecraftWindow);
+
+    // Sélectionnez la fenêtre de l'application et appliquez la fonction pour la rendre déplaçable
+    const appWindow = document.getElementById('app-window');
+    makeWindowDraggable(appWindow);
+
+    // Sélectionnez la fenêtre des paramètres et appliquez la fonction pour la rendre déplaçable
+const settingsWindow = document.getElementById('settings-window');
+makeWindowDraggable(settingsWindow);
+
+
+
+// Fonction pour basculer entre le mode plein écran de la fenêtre et le mode normal
+function toggleFullscreen(windowId) {
+    const windowElement = document.getElementById(windowId);
+    const contentElement = windowElement.querySelector('.window-content');
+    const iframeElement = contentElement.querySelector('iframe');
+
+    if (!windowElement.classList.contains('fullscreen')) {
+        // Si la fenêtre n'est pas déjà en mode plein écran
+        windowElement.classList.add('fullscreen'); // Ajouter la classe pour rendre la fenêtre plein écran
+        
+        // Demander au navigateur de passer en mode plein écran pour la fenêtre
+        if (windowElement.requestFullscreen) {
+            windowElement.requestFullscreen();
+        } else if (windowElement.webkitRequestFullscreen) { /* Safari */
+            windowElement.webkitRequestFullscreen();
+        } else if (windowElement.msRequestFullscreen) { /* IE11 */
+            windowElement.msRequestFullscreen();
+        }
+        
+        // Ajuster la taille de l'iframe pour remplir l'écran
+        resizeIframe(iframeElement);
+    } else {
+        // Si la fenêtre est déjà en mode plein écran, la ramener au mode normal
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
+        windowElement.classList.remove('fullscreen'); // Supprimer la classe pour revenir au mode normal
+        // Réinitialiser la taille de l'iframe
+        iframeElement.style.width = 'auto';
+        iframeElement.style.height = 'auto';
+    }
+}
+
+// Fonction pour basculer entre le mode plein écran de la fenêtre et le mode normal
+function toggleFullscreen(windowId) {
+    const windowElement = document.getElementById(windowId);
+    const contentElement = windowElement.querySelector('.window-content');
+    const iframeElement = contentElement.querySelector('iframe');
+
+    if (!windowElement.classList.contains('fullscreen')) {
+        // Si la fenêtre n'est pas déjà en mode plein écran
+        windowElement.classList.add('fullscreen'); // Ajouter la classe pour rendre la fenêtre plein écran
+        
+        // Demander au navigateur de passer en mode plein écran pour la fenêtre
+        if (windowElement.requestFullscreen) {
+            windowElement.requestFullscreen();
+        } else if (windowElement.webkitRequestFullscreen) { /* Safari */
+            windowElement.webkitRequestFullscreen();
+        } else if (windowElement.msRequestFullscreen) { /* IE11 */
+            windowElement.msRequestFullscreen();
+        }
+        
+        // Ajuster la taille et centrer l'iframe pour remplir l'écran
+        resizeAndCenterIframe(iframeElement);
+    } else {
+        // Si la fenêtre est déjà en mode plein écran, la ramener au mode normal
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
+        windowElement.classList.remove('fullscreen'); // Supprimer la classe pour revenir au mode normal
+        // Réinitialiser la taille de l'iframe
+        iframeElement.style.width = 'auto';
+        iframeElement.style.height = 'auto';
+    }
+}
+
+// Fonction pour ajuster la taille et centrer l'iframe pour remplir l'écran
+function resizeAndCenterIframe(iframe) {
+    if (iframe) {
+        // Récupérer la taille de l'écran
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        
+        // Appliquer la taille de l'écran à l'iframe
+        iframe.style.width = screenWidth + 'px';
+        iframe.style.height = screenHeight + 'px';
+        
+        // Centrer l'iframe
+        iframe.style.position = 'absolute';
+        iframe.style.left = '50%';
+        iframe.style.top = '50%';
+        iframe.style.transform = 'translate(-50%, -50%)';
+    }
+}
+
+
+
+// Ajouter un écouteur d'événement pour le changement de taille de la fenêtre
+window.addEventListener('resize', function() {
+    const fullscreenWindow = document.querySelector('.window.fullscreen');
+    if (fullscreenWindow) {
+        const iframeElement = fullscreenWindow.querySelector('.window-content iframe');
+        resizeAndCenterIframe(iframeElement);
+    }
+});
+
+function openFileManager() {
+    window.open('chemin/vers/le/gestionnaire/de/fichiers', '_blank', 'width=800,height=600');
+}
+
+
+
+
+
+</script>
+
+<div class="window" id="file-manager-window">
+    <div class="window-header" onmousedown="startDragging(event)">
+        <span class="close-button" onclick="closeFileManagerWindow()">&#10006;</span>
+        <span class="window-title">Gestionnaire de fichiers</span>
+    </div>
+    <div class="window-content">
+        <div class="file-explorer">
+            <div class="sidebar">
+                <h3>Catégories :</h3>
+                <ul>
+                    <li><a href="#" class="active">Documents</a></li>
+                    <li><a href="#">Téléchargements</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#">Vidéos</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">Minecraft.exe</div>
+                        <div class="file-size">1GIB</div>
+                        <div class="file-date">2024-06-05</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">Facture.pdf</div>
+                        <div class="file-size">20KB</div>
+                        <div class="file-date">2024-06-06</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+function openFileManager() {
+    const fileManagerWindow = document.getElementById('file-manager-window');
+    fileManagerWindow.style.display = 'block';
+}
+
+function closeFileManagerWindow() {
+    const fileManagerWindow = document.getElementById('file-manager-window');
+    fileManagerWindow.style.display = 'none';
+}
+
+let isDragging = false;
+let offsetX, offsetY;
+
+function startDragging(event) {
+    const windowElement = event.target.closest('.window');
+    if (windowElement && !event.target.classList.contains('close-button') && !event.target.classList.contains('fullscreen-button')) {
+        isDragging = true;
+        windowElement.classList.add('active');
+        offsetX = event.clientX - windowElement.getBoundingClientRect().left;
+        offsetY = event.clientY - windowElement.getBoundingClientRect().top;
+        document.addEventListener('mousemove', dragWindow);
+        document.addEventListener('mouseup', stopDragging);
+    }
+}
+
+function dragWindow(event) {
+    if (isDragging) {
+        const windowElement = document.querySelector('.window.active');
+        windowElement.style.left = event.clientX - offsetX + 'px';
+        windowElement.style.top = event.clientY - offsetY + 'px';
+    }
+}
+
+function stopDragging() {
+    isDragging = false;
+    const activeWindow = document.querySelector('.window.active');
+    if (activeWindow) {
+        activeWindow.classList.remove('active');
+    }
+    document.removeEventListener('mousemove', dragWindow);
+    document.removeEventListener('mouseup', stopDragging);
+}
+
+</script>
